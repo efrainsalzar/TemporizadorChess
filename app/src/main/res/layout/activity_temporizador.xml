@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Temporizador">
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/tempo_style"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/centro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/nombre1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PLayer 1"
+        android:rotation="270"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="@+id/view1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1"
+        app:layout_constraintVertical_bias="0.511" />
+
+    <TextView
+        android:id="@+id/tiempo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="TIME"
+        android:gravity="center"
+        android:rotation="180"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <LinearLayout
+        android:id="@+id/centro"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/refresh_icon" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/play_icon" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/setting_icon" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/tempo_style"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centro" >
+
+
+    </View>
+
+    <TextView
+        android:id="@+id/nombre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PLayer 2"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="18dp"
+        android:rotation="270"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+    <TextView
+        android:id="@+id/tiempo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="TIME"
+        android:gravity="center"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
