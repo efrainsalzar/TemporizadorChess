@@ -1,29 +1,26 @@
 package com.example.temporizadorchess
 
-import android.content.ContentValues.TAG
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat
+
 
 class Temporizador : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
+
+
         //nombres extraidos
         val name1 = intent.getStringExtra("name_p1")
         val name2 = intent.getStringExtra("name_p2")
-
-
         var sw = 0
         //Inicia la activity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
+
 
 //val de otra clase
         val tiempomin = ChessTimer(this,)

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894590078921",
+    "project_id": "clicktimechess",
+    "storage_bucket": "clicktimechess.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894590078921:android:667cc1d43338ce6df6e218",
+        "android_client_info": {
+          "package_name": "com.example.temporizadorchess"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQNcK50qFvsdvcA40ymn3SGb5rPUeFSAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
