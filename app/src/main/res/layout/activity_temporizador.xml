@@ -82,6 +82,12 @@
             android:layout_weight="1"
             android:src="@drawable/setting_icon" />
 
+        <ImageView
+            android:id="@+id/StopGame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/stop_24" />
 
     </LinearLayout>
 

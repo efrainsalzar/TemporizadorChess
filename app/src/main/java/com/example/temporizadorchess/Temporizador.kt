@@ -1,8 +1,12 @@
 package com.example.temporizadorchess
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 
 
@@ -42,6 +46,9 @@ class Temporizador : AppCompatActivity() {
         //color del boton click
         val boton1 = findViewById<View>(R.id.view1)
         val boton2 = findViewById<View>(R.id.view2)
+        //val centroboton = findViewById<LinearLayout>(R.id.centro)
+        val stoped = findViewById<ImageView>(R.id.StopGame)
+
 
         //click desde otra clase
         val botonclick = ChessTimer(this,)
@@ -67,6 +74,12 @@ class Temporizador : AppCompatActivity() {
                 sw = 1
             }
         }
+
+        stoped.setOnClickListener{
+            val intent = Intent(this, InformeResult::class.java)
+            startActivity(intent)
+        }
+
         /* val textView = findViewById<TextView>(R.id.contadortiempo)
          val countDownTimer = object : CountDownTimer(10000, 1000) {
              override fun onTick(millisUntilFinished: Long) {
