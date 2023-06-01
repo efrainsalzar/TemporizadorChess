@@ -7,54 +7,100 @@
     android:layout_margin="5sp"
     tools:context=".MainActivity">
 
-
-    <EditText
-        android:id="@+id/nameP1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Name of Player 1"
-        android:inputType="text"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/return_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/nameP2"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/customPlayer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:ems="10"
-        android:hint="Name of Player 2"
-        android:inputType="text"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:background="@drawable/emoji_people_24" />
+
+            <EditText
+                android:id="@+id/nameP1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Name of Player 1"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.13"
+                android:layout_height="match_parent"
+                android:background="@drawable/emoji_people_24"/>
+
+            <EditText
+                android:id="@+id/nameP2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Name of Player 2"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/BotonStar"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Iniciar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.931" />
 
     <RadioGroup
         android:id="@+id/MinutosVerif"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/nameP1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75">
+
+        <RadioButton
+            android:id="@+id/tresMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 min" />
 
         <RadioButton
             android:id="@+id/cincoMinutos"
@@ -69,10 +115,10 @@
             android:text="10 min" />
 
         <RadioButton
-            android:id="@+id/tresMinutos"
+            android:id="@+id/treintaMinutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3 min" />
+            android:text="30 min" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
