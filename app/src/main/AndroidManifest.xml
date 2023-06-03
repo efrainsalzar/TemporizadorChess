@@ -16,9 +16,6 @@
             android:name=".InformeResult"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
-            android:exported="false" />
-        <activity
             android:name=".Temporizador"
             android:exported="false" />
         <activity

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
@@ -26,8 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         getData()
 
-
-
         //funcion desde ota clase
         /*val otra = ChessTimer(this)
         otra.mostrarToast()*/
@@ -35,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val namep1 = findViewById<EditText>(R.id.nameP1)
         val namep2 = findViewById<EditText>(R.id.nameP2)
+        val botonSalir = findViewById<ImageView>(R.id.botonSalir)
 
         //boton iniciar
         val btStar = findViewById<Button>(R.id.BotonStar)
@@ -54,6 +54,11 @@ class MainActivity : AppCompatActivity() {
             //val opcionSeleccionada = radioButton.id
             ChessTimer.botonSeleccionado = radioButton.text.toString()
 
+        }
+
+
+        botonSalir.setOnClickListener() {
+            finish()
         }
     }//fin de fun onCreate
 
