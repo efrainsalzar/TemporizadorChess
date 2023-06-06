@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name_p1",namep1.text.toString())
             intent.putExtra("name_p2",namep2.text.toString())
             startActivity(intent)
+            //finish()
         }
 
         val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)

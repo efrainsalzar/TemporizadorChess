@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebaseconection.ItemsViewModel
 
-class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val mList: List<ItemsViewModel>) :
+    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,6 +24,7 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
 
         val ItemsViewModel = mList[position]
 
@@ -43,9 +46,9 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         //val imageView: ImageView = itemView.findViewById(R.id.imageview)
-        val textView: TextView = itemView.findViewById(R.id.textView)
-        val textView11: TextView = itemView.findViewById(R.id.textView11)
-        val textView12: TextView = itemView.findViewById(R.id.textView12)
-        val textView13: TextView = itemView.findViewById(R.id.textView13)
+        val textView: TextView = itemView.findViewById(R.id.nombree)
+        val textView11: TextView = itemView.findViewById(R.id.tiempoo)
+        val textView12: TextView = itemView.findViewById(R.id.turnoss)
+        val textView13: TextView = itemView.findViewById(R.id.promedioo)
     }
 }

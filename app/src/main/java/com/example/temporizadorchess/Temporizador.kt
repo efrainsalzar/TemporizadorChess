@@ -78,6 +78,7 @@ class Temporizador : AppCompatActivity() {
         stoped.setOnClickListener{
             val intent = Intent(this, InformeResult::class.java)
             startActivity(intent)
+            finish()
         }
 
         /* val textView = findViewById<TextView>(R.id.contadortiempo)
