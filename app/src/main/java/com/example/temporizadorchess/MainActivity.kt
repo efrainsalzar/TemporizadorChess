@@ -1,5 +1,6 @@
 package com.example.temporizadorchess
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     //valor de DBFire
     val db = Firebase.firestore
     val TAG = "Datos"
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         //splash
         //setTheme(R.id.AppTheme)
@@ -45,6 +47,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name_p2",namep2.text.toString())
             startActivity(intent)
             //finish()
+        }
+        val ace=findViewById<Button>(R.id.acerca)
+
+        ace.setOnClickListener {
+            val intent=Intent(this,acercadenosotros::class.java)
+            startActivity(intent)
         }
 
         val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)

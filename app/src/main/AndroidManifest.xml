@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TemporizadorChess"
         tools:targetApi="25">
         <activity
+            android:name=".Configuracion"
+            android:exported="false" />
+        <activity
             android:name=".acercadenosotros"
             android:exported="false" />
         <activity

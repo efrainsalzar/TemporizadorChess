@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -11,7 +12,17 @@ import android.widget.TextView
 
 
 class Temporizador : AppCompatActivity() {
-
+    //Variables para el temporizador
+    var times1=""
+    var a=2
+    var playeron=1
+    var timeon=false
+    var time1=5
+    var time2=5
+    var time12=0
+    var time21=0
+    var b=1
+    //
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -28,6 +39,7 @@ class Temporizador : AppCompatActivity() {
         //Inicia la activity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
+        supportActionBar?.hide()
 
 
 //val de otra clase
@@ -116,7 +128,7 @@ class Temporizador : AppCompatActivity() {
 
 
 
-
     }//fin funcion onCreate
 
 }//fin ClassMain
+
