@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.temporizadorchess"
-        minSdk 29
-        targetSdk 33
+        minSdk 27
+        targetSdk 27
         versionCode 1
         versionName "1.0"
 
@@ -27,6 +27,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildToolsVersion '33.0.2'
 }
 
 dependencies {
