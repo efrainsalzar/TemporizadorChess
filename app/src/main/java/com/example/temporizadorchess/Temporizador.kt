@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -12,18 +11,7 @@ import android.widget.TextView
 
 
 class Temporizador : AppCompatActivity() {
-    //Variables para el temporizador
-    var times1=""
-    var a=2
-    var playeron=1
-    var timeon=false
-    var time1=5
-    var time2=5
-    var time12=0
-    var time21=0
-    var b=1
-    //
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -33,13 +21,9 @@ class Temporizador : AppCompatActivity() {
         val name1 = intent.getStringExtra("name_p1")
         val name2 = intent.getStringExtra("name_p2")
         var sw = 0
-        //contadores de turnos
-        var contador1=0
-        var contador2=0
         //Inicia la activity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
-        supportActionBar?.hide()
 
 
 //val de otra clase
@@ -68,19 +52,18 @@ class Temporizador : AppCompatActivity() {
 
         //click desde otra clase
         val botonclick = ChessTimer(this,)
-        //contador de turnos
-        val tn1=findViewById<TextView>(R.id.turnos1)
-        val tn2=findViewById<TextView>(R.id.turnos2)
+
+
         //color del boton click
         boton1.setOnClickListener {
             //cambia el color del boton
             if (sw == 1 || sw == 0) {
                 /*boton1.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/  /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton1, boton2)
-                    contador1++
-                    tn1.setText("Turnos: "+Integer.toString(contador1))
+
+
                 sw = 2
-            }
+
         }
 
         boton2.setOnClickListener {
@@ -88,14 +71,14 @@ class Temporizador : AppCompatActivity() {
             if (sw == 2 || sw == 0) {
                 /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/ /*boton1.backgroundTintList =  ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton2, boton1)
-                contador2++
-                tn2.setText("Turnos: "+Integer.toString(contador2))
                 sw = 1
             }
         }
 
         stoped.setOnClickListener{
-            val intent = Intent(this, InformeResult::class.java)
+            val intent = Intent(this, Resultados::class.java)
+            intent.putExtra("namee_p1",etiqueta1.text.toString())
+            intent.putExtra("namee_p2",etiqueta2.text.toString())
             startActivity(intent)
             finish()
         }
@@ -128,7 +111,7 @@ class Temporizador : AppCompatActivity() {
 
 
 
+
     }//fin funcion onCreate
 
 }//fin ClassMain
-
