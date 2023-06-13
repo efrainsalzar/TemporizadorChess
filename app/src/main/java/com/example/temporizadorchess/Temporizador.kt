@@ -63,7 +63,7 @@ class Temporizador : AppCompatActivity() {
 
 
                 sw = 2
-
+            }
         }
 
         boton2.setOnClickListener {
