@@ -11,10 +11,10 @@
         android:id="@+id/botonSalir"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/return_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,9 +68,9 @@
                 android:id="@+id/nameP2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginLeft="10dp"
                 android:hint="Name of Player 2"
                 android:inputType="text" />
 
@@ -88,43 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931" />
-
-    <RadioGroup
-        android:id="@+id/MinutosVerif"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
-
-        <RadioButton
-            android:id="@+id/tresMinutos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3 min" />
-
-        <RadioButton
-            android:id="@+id/cincoMinutos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5 min" />
-
-        <RadioButton
-            android:id="@+id/diezMinutos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="10 min" />
-
-        <RadioButton
-            android:id="@+id/treintaMinutos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="30 min" />
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.805" />
 
     <Button
         android:id="@+id/acerca"
@@ -137,5 +101,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/salida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salida"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.675" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

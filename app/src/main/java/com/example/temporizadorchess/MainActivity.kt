@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val namep1 = findViewById<EditText>(R.id.nameP1)
+        val namep2 = findViewById<EditText>(R.id.nameP2)
+        val botonSalir = findViewById<ImageView>(R.id.botonSalir)
+
         getData()
 
         //funcion desde ota clase
@@ -34,10 +38,12 @@ class MainActivity : AppCompatActivity() {
         otra.mostrarToast()*/
 
 
-        val namep1 = findViewById<EditText>(R.id.nameP1)
-        val namep2 = findViewById<EditText>(R.id.nameP2)
-        val botonSalir = findViewById<ImageView>(R.id.botonSalir)
 
+val salida=findViewById<Button>(R.id.salida)
+
+        salida.setOnClickListener{
+            finish()
+        }
         //boton iniciar
         val btStar = findViewById<Button>(R.id.BotonStar)
 
@@ -55,15 +61,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
+      //  val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+        //radioGroup.setOnCheckedChangeListener { group, checkedId ->
             // obtén la opción seleccionada
-            val radioButton = findViewById<RadioButton>(checkedId)
+          //  val radioButton = findViewById<RadioButton>(checkedId)
             //val opcionSeleccionada = radioButton.id
-            ChessTimer.botonSeleccionado = radioButton.text.toString()
+            //ChessTimer.botonSeleccionado = radioButton.text.toString()
 
-        }
+        //}
 
 
         botonSalir.setOnClickListener() {

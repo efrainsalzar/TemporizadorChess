@@ -1,33 +1,35 @@
 package com.example.temporizadorchess
 
+import android.animation.Animator.AnimatorPauseListener
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import java.util.Locale
 
 
 class Temporizador : AppCompatActivity() {
     //Variables para el temporizador
-    var times1=""
-    var a=2
-    var playeron=1
-    var timeon=false
-    var time1=5
-    var time2=5
-    var time12=0
-    var time21=0
-    var b=1
-    //
+    private lateinit var countDownTimer: CountDownTimer
+    private lateinit var textViewTimer1: TextView
+    private lateinit var textViewTimer2: TextView
+    //los textos del temporizador
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
-
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_temporizador)
+        supportActionBar?.hide()
+//variables del temporizador
+ textViewTimer1=findViewById(R.id.tiempo1)
+textViewTimer2=findViewById(R.id.tiempo2)
+        startTimer(600000, 1000)
 
         //nombres extraidos
         val name1 = intent.getStringExtra("name_p1")
@@ -37,40 +39,29 @@ class Temporizador : AppCompatActivity() {
         var contador1=0
         var contador2=0
         //Inicia la activity
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_temporizador)
-        supportActionBar?.hide()
-
 
 //val de otra clase
         val tiempomin = ChessTimer(this,)
-
         //nombre
         val etiqueta1 = findViewById<TextView>(R.id.nombre1)
         etiqueta1.setText(name1)
         val etiqueta2 = findViewById<TextView>(R.id.nombre2)
         etiqueta2.setText(name2)
 
-        //tiempo text
-        val etiquetaTiempo1 = findViewById<TextView>(R.id.tiempo1)
-        val etiquetaTiempo2 = findViewById<TextView>(R.id.tiempo2)
-
-        tiempomin.tiempominutos(etiquetaTiempo1)
-        tiempomin.tiempominutos(etiquetaTiempo2)
-        //etiquetaTiempo2.setText(tiempo)
-
         //color del boton click
         val boton1 = findViewById<View>(R.id.view1)
         val boton2 = findViewById<View>(R.id.view2)
-        //val centroboton = findViewById<LinearLayout>(R.id.centro)
+
         val stoped = findViewById<ImageView>(R.id.StopGame)
-
-
         //click desde otra clase
         val botonclick = ChessTimer(this,)
         //contador de turnos
         val tn1=findViewById<TextView>(R.id.turnos1)
         val tn2=findViewById<TextView>(R.id.turnos2)
+
+
+
+
         //color del boton click
         boton1.setOnClickListener {
             //cambia el color del boton
@@ -94,41 +85,41 @@ class Temporizador : AppCompatActivity() {
             }
         }
 
-        stoped.setOnClickListener{
-            val intent = Intent(this, InformeResult::class.java)
-            startActivity(intent)
-            finish()
+
+
+
+    }
+
+
+    private fun startTimer(durationMillis: Long, intervalMillis: Long) {
+        countDownTimer = object : CountDownTimer(durationMillis, intervalMillis) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                val minutes = secondsRemaining / 60
+                val seconds = secondsRemaining % 60
+                val timeFormatted = String.format("%02d:%02d", minutes, seconds)
+                textViewTimer1.text = timeFormatted
+                textViewTimer2.text = timeFormatted
+            }
+
+            override fun onFinish() {
+                textViewTimer1.text = "00:00"
+                textViewTimer2.text = "00:00"
+            }
         }
 
-        /* val textView = findViewById<TextView>(R.id.contadortiempo)
-         val countDownTimer = object : CountDownTimer(10000, 1000) {
-             override fun onTick(millisUntilFinished: Long) {
-                 textView.text =  "${millisUntilFinished / 1000}"
-             }
-             override fun onFinish() {
-                 textView.text = "Tiempo finalizado"
-             }
-         }
-         countDownTimer.start()*/
-        /*val timer = ChessTimer(object: ChessTimer.TimerListener {
-            override fun onTimeTick(player1Time: Long, player2Time: Long) {
-                // update UI with current times
-            }
-            override fun onTimerFinish(winner: Int) {
-                // handle end of game
-            }
-            override fun onPlayerSwitch() {
-                // handle player switching turns
-            }
-        })
-        timer.start(120, 120) // start with 2 minutes for each player
-*/
+        countDownTimer.start()
+    }
 
 
 
 
+    override fun onDestroy() {
+        super.onDestroy()
+        countDownTimer.cancel() // Cancela el temporizador al cerrar la actividad
+    }
+}
 
-    }//fin funcion onCreate
 
-}//fin ClassMain
+
 

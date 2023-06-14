@@ -42,7 +42,7 @@
         android:id="@+id/tiempo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="TIME"
+        android:text="TIME"
 
         android:gravity="center"
         android:rotation="180"
@@ -66,12 +66,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/pausegame"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/pause_icon" />
+
+        <ImageView
+            android:id="@+id/resetgame"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/refresh_icon" />
 
         <ImageView
+            android:id="@+id/startgame"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -126,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="TIME"
+        android:text="TIME"
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
