@@ -6,21 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".Configuracion" >
 
-
-
-
     <Button
-        android:id="@+id/acerca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerca de"
+        android:id="@+id/button2"
+        android:layout_width="245dp"
+        android:layout_height="71dp"
+        android:text="Iniciar tiempo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.816" />
 
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="116dp"
+        android:layout_height="130dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="--"
+        android:gravity="center"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
 
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="122dp"
+        android:layout_height="127dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="--"
+        android:textSize="100dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322" />
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327" />
 </androidx.constraintlayout.widget.ConstraintLayout>

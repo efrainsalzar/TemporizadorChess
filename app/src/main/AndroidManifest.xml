@@ -13,11 +13,12 @@
         android:theme="@style/Theme.TemporizadorChess"
         tools:targetApi="25">
         <activity
-            android:name=".contador"
-            android:exported="false" />
-        <activity
             android:name=".Configuracion"
             android:exported="false" />
+        <activity
+            android:name=".Resultados"
+            android:exported="false" />
+
         <activity
             android:name=".acercadenosotros"
             android:exported="false" />

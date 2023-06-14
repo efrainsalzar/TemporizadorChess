@@ -28,9 +28,8 @@ class Temporizador : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_temporizador)
-        supportActionBar?.hide()
+
 //variables del temporizador
  textViewTimer1=findViewById(R.id.tiempo1)
 textViewTimer2=findViewById(R.id.tiempo2)
@@ -42,11 +41,12 @@ textViewTimer2=findViewById(R.id.tiempo2)
         var sw = 0
         //Inicia la activity
 
-        setContentView(R.layout.activity_temporizador)
+
 
 
 
 //val de otra clase
+        val configurar=findViewById<ImageView>(R.id.config)
         val tiempomin = ChessTimer(this,)
         //nombre
         val etiqueta1 = findViewById<TextView>(R.id.nombre1)
@@ -67,17 +67,24 @@ textViewTimer2=findViewById(R.id.tiempo2)
         //contador de turnos
         val tn1=findViewById<TextView>(R.id.turnos1)
         val tn2=findViewById<TextView>(R.id.turnos2)
-
-
-
+        var cont1=0
+        var cont2=0
+        configurar.setOnClickListener{
+            val intent=Intent(this,Configuracion::class.java)
+            startActivity(intent)
+        }
+        stoped.setOnClickListener{
+            val intent=Intent(this,Resultados::class.java)
+            startActivity(intent)
+        }
         //color del boton click
         boton1.setOnClickListener {
             //cambia el color del boton
             if (sw == 1 || sw == 0) {
                 /*boton1.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/  /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton1, boton2)
-
-
+                cont1++
+                tn1.setText("Turnos: "+cont1)
                 sw = 2
             }
         }
@@ -87,9 +94,13 @@ textViewTimer2=findViewById(R.id.tiempo2)
             if (sw == 2 || sw == 0) {
                 /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/ /*boton1.backgroundTintList =  ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton2, boton1)
+                cont2++
+                tn2.setText("Turnos: "+cont2)
                 sw = 1
             }
         }
+
+
 
 
 
@@ -133,7 +144,7 @@ textViewTimer2=findViewById(R.id.tiempo2)
 
 
 
-}//fin funcion onCreate
+//fin funcion onCreate
 
-}//fin ClassMain
+//fin ClassMain
 

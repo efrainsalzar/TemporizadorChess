@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -26,21 +27,23 @@ object DatosEnvi {
 class MainActivity : AppCompatActivity() {
 
 
+
+
     //valor de DBFire
-    val db = Firebase.firestore
-    val TAG = "Datos"
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         //splash
         //setTheme(R.id.AppTheme)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val botonsalir = findViewById<ImageView>(R.id.botonSalir)
+        val btStar = findViewById<Button>(R.id.BotonStar)
         val namep1 = findViewById<EditText>(R.id.nameP1)
         val namep2 = findViewById<EditText>(R.id.nameP2)
-        val botonSalir = findViewById<ImageView>(R.id.botonSalir)
-
+        val acercade=findViewById<Button>(R.id.acerca)
 
 
         //getData()
@@ -58,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         //boton iniciar
-        val btStar = findViewById<Button>(R.id.BotonStar)
+
 
         btStar.setOnClickListener{
             val intent =Intent(this,Temporizador::class.java)
@@ -74,13 +77,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //  val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
-        val namep1 = findViewById<EditText>(R.id.nameP1)
-        val namep2 = findViewById<EditText>(R.id.nameP2)
-        val botonSalir = findViewById<ImageView>(R.id.botonSalir)
-        val btStar = findViewById<Button>(R.id.BotonStar)
-        val acercade=findViewById<Button>(R.id.acerca)
 
         //boton iniciar
 
@@ -118,13 +115,14 @@ class MainActivity : AppCompatActivity() {
             //finish()
         }
     }
+    fun siguienteActivity(nameActivity: Class<out Activity>){
+        val intent = Intent(this,nameActivity)
+      startActivity(intent)
+    }
 }
 
-}//fin de fun onCreate
+//fin de fun onCreate
 
-fun siguienteActivity(nameActivity: Class<out Activity>){
-    val intent = Intent(this,nameActivity)
-    startActivity(intent)
-}
 
-}//fin class
+
+//fin class
