@@ -4,123 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Configuracion">
+    tools:context=".Configuracion" >
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="292dp"
-        android:layout_height="256dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597">
 
-        <RadioButton
-            android:id="@+id/min3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3:00" />
 
-        <RadioButton
-            android:id="@+id/min5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            tools:text="5:00" />
-
-        <RadioButton
-            android:id="@+id/min10"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="10:00" />
-
-        <RadioButton
-            android:id="@+id/min15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="15:00" />
-
-        <RadioButton
-            android:id="@+id/min20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="20:00" />
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="74dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="68dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=":"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
 
     <Button
-        android:id="@+id/custom"
+        android:id="@+id/acerca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar tiempo personalizado"
+        android:text="Acerca de"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.023" />
 
-    <Button
-        android:id="@+id/nuevo"
-        android:layout_width="211dp"
-        android:layout_height="58dp"
-        android:text="Agregar tiempo fijado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="316dp"
-        android:layout_height="34dp"
-        android:gravity="center"
-        android:text="Si no encuentra el tiempo, introduzcalo aqui"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

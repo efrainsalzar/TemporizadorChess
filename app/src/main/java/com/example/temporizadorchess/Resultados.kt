@@ -1,8 +1,10 @@
 package com.example.temporizadorchess
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class Resultados : AppCompatActivity() {
@@ -26,11 +28,26 @@ class Resultados : AppCompatActivity() {
         //llamar tiempo
         tiempo(tiempoP1Juego,tiempoP2Juego)
 
+        val btnReiniciar = findViewById<ImageView>(R.id.reiniciar)
+        val btnHome = findViewById<ImageView>(R.id.newHome)
+
         val botonSalirApp = findViewById<Button>(R.id.SalirApp)
+
         //eventoClick
         botonSalirApp.setOnClickListener{
             finishAffinity()
         }
+        btnReiniciar.setOnClickListener {
+            val intent = Intent(this, Temporizador::class.java)
+            startActivity(intent)
+            finish()
+        }
+        btnHome.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
     }//fin oncreate
 
