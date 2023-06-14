@@ -18,8 +18,8 @@ class Temporizador : AppCompatActivity() {
 
 
         //nombres extraidos
-        val name1 = intent.getStringExtra("name_p1")
-        val name2 = intent.getStringExtra("name_p2")
+        //val name1 = intent.getStringExtra("name_p1")
+        //val name2 = intent.getStringExtra("name_p2")
         var sw = 0
         //Inicia la activity
         super.onCreate(savedInstanceState)
@@ -31,9 +31,11 @@ class Temporizador : AppCompatActivity() {
 
         //nombre
         val etiqueta1 = findViewById<TextView>(R.id.nombre1)
-        etiqueta1.setText(name1)
+        etiqueta1.text = DatosEnvi.nombrePlayer1
+        //etiqueta1.setText(name1)
         val etiqueta2 = findViewById<TextView>(R.id.nombre2)
-        etiqueta2.setText(name2)
+        etiqueta2.text = DatosEnvi.nombrePlayer2
+        //etiqueta2.setText(name2)
 
         //tiempo text
         val etiquetaTiempo1 = findViewById<TextView>(R.id.tiempo1)
@@ -77,40 +79,9 @@ class Temporizador : AppCompatActivity() {
 
         stoped.setOnClickListener{
             val intent = Intent(this, Resultados::class.java)
-            intent.putExtra("namee_p1",etiqueta1.text.toString())
-            intent.putExtra("namee_p2",etiqueta2.text.toString())
             startActivity(intent)
             finish()
         }
-
-        /* val textView = findViewById<TextView>(R.id.contadortiempo)
-         val countDownTimer = object : CountDownTimer(10000, 1000) {
-             override fun onTick(millisUntilFinished: Long) {
-                 textView.text =  "${millisUntilFinished / 1000}"
-             }
-             override fun onFinish() {
-                 textView.text = "Tiempo finalizado"
-             }
-         }
-         countDownTimer.start()*/
-        /*val timer = ChessTimer(object: ChessTimer.TimerListener {
-            override fun onTimeTick(player1Time: Long, player2Time: Long) {
-                // update UI with current times
-            }
-            override fun onTimerFinish(winner: Int) {
-                // handle end of game
-            }
-            override fun onPlayerSwitch() {
-                // handle player switching turns
-            }
-        })
-        timer.start(120, 120) // start with 2 minutes for each player
-*/
-
-
-
-
-
 
     }//fin funcion onCreate
 
