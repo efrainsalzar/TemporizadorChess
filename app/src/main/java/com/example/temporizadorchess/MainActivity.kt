@@ -22,6 +22,8 @@ object DatosEnvi {
     var tiempoJuego: String = ""
 }
 
+
+
 class MainActivity : AppCompatActivity() {
 
 
@@ -35,30 +37,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //getData()
-
-        //funcion desde ota clase
-        /*val otra = ChessTimer(this)
-        otra.mostrarToast()*/
-
 
         val namep1 = findViewById<EditText>(R.id.nameP1)
         val namep2 = findViewById<EditText>(R.id.nameP2)
         val botonSalir = findViewById<ImageView>(R.id.botonSalir)
         val btStar = findViewById<Button>(R.id.BotonStar)
-        val acercade=findViewById<Button>(R.id.acerca)
+
         val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
-        val selectedId = radioGroup.checkedRadioButtonId
-        //boton iniciar
 
         //acercade.background.alpha = 0
 
-
-
         //Metodos Click
-        acercade.setOnClickListener {
-            siguienteActivity(acercadenosotros::class.java)
-        }
+
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             // obtén la opción seleccionada

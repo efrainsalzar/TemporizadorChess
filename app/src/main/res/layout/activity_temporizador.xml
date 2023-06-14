@@ -66,18 +66,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/reiniciarTempo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/refresh_icon" />
 
         <ImageView
+            android:id="@+id/pausePlay"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/play_icon" />
 
         <ImageView
+            android:id="@+id/configuracion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
