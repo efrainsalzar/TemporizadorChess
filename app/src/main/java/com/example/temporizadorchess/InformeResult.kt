@@ -18,7 +18,6 @@ class InformeResult : AppCompatActivity() {
 
     val getdatoss = arrayOf("nombre", "tiempo", "turnos", "promedio")
 
-    /*val dbIDdatos = arrayOf("recyclerviewN","dbPromedio","dbTiempo","dbTurnos")*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informe_result)

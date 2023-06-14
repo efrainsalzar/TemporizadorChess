@@ -12,9 +12,10 @@ class ChessTimer(private val mContext: Context) {
     val thenTime = "10:00"
     val fiveTime = "5:00"
     val threeTime = "3:00"
+    val thirtyTime = "30:00"
 
     companion object {
-        var botonSeleccionado:String? = null
+        var botonSeleccionado: String? = null
     }
 
     fun mostrarToast() {//muestra un mensaje temporal
@@ -27,15 +28,18 @@ class ChessTimer(private val mContext: Context) {
 
     fun ClickColor(colorboton1: View, colorboton2: View) {
         colorboton1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.mycolor2))
-
         colorboton2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.mycolor))
     }
 
     fun tiempominutos(time: TextView) {
         when (botonSeleccionado) {
-            "10 min" -> {   time.setText(thenTime)   }
-            "5 min" -> {    time.setText(fiveTime)   }
-            "3 min" -> {    time.setText(threeTime)  }
+            "10 min" -> {                time.setText(thenTime)            }
+
+            "5 min" -> {                time.setText(fiveTime)            }
+
+            "3 min" -> {                time.setText(threeTime)            }
+
+            "30 min" -> {                time.setText(thirtyTime)            }
         }
     }
 }

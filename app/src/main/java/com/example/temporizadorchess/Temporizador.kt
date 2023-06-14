@@ -5,8 +5,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.os.CountDownTimer
 import android.os.Handler
+
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -15,6 +17,7 @@ import java.util.Locale
 
 
 class Temporizador : AppCompatActivity() {
+
     //Variables para el temporizador
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var textViewTimer1: TextView
@@ -22,8 +25,10 @@ class Temporizador : AppCompatActivity() {
     //los textos del temporizador
 
     @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_temporizador)
         supportActionBar?.hide()
 //variables del temporizador
@@ -32,21 +37,24 @@ textViewTimer2=findViewById(R.id.tiempo2)
         startTimer(600000, 1000)
 
         //nombres extraidos
-        val name1 = intent.getStringExtra("name_p1")
-        val name2 = intent.getStringExtra("name_p2")
+        //val name1 = intent.getStringExtra("name_p1")
+        //val name2 = intent.getStringExtra("name_p2")
         var sw = 0
-        //contadores de turnos
-        var contador1=0
-        var contador2=0
         //Inicia la activity
+
+        setContentView(R.layout.activity_temporizador)
+
+
 
 //val de otra clase
         val tiempomin = ChessTimer(this,)
         //nombre
         val etiqueta1 = findViewById<TextView>(R.id.nombre1)
-        etiqueta1.setText(name1)
+        etiqueta1.text = DatosEnvi.nombrePlayer1
+        //etiqueta1.setText(name1)
         val etiqueta2 = findViewById<TextView>(R.id.nombre2)
-        etiqueta2.setText(name2)
+        etiqueta2.text = DatosEnvi.nombrePlayer2
+        //etiqueta2.setText(name2)
 
         //color del boton click
         val boton1 = findViewById<View>(R.id.view1)
@@ -55,10 +63,10 @@ textViewTimer2=findViewById(R.id.tiempo2)
         val stoped = findViewById<ImageView>(R.id.StopGame)
         //click desde otra clase
         val botonclick = ChessTimer(this,)
+
         //contador de turnos
         val tn1=findViewById<TextView>(R.id.turnos1)
         val tn2=findViewById<TextView>(R.id.turnos2)
-
 
 
 
@@ -68,8 +76,8 @@ textViewTimer2=findViewById(R.id.tiempo2)
             if (sw == 1 || sw == 0) {
                 /*boton1.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/  /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton1, boton2)
-                    contador1++
-                    tn1.setText("Turnos: "+Integer.toString(contador1))
+
+
                 sw = 2
             }
         }
@@ -79,11 +87,10 @@ textViewTimer2=findViewById(R.id.tiempo2)
             if (sw == 2 || sw == 0) {
                 /*boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))*/ /*boton1.backgroundTintList =  ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))*/
                 botonclick.ClickColor(boton2, boton1)
-                contador2++
-                tn2.setText("Turnos: "+Integer.toString(contador2))
                 sw = 1
             }
         }
+
 
 
 
@@ -122,4 +129,11 @@ textViewTimer2=findViewById(R.id.tiempo2)
 
 
 
+
+
+
+
+}//fin funcion onCreate
+
+}//fin ClassMain
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformeResult">
+    tools:context=".Resultados">
 
 
     <TextView
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Victory"
+        android:text="Avatar"
         android:textColor="#14E31D"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
         android:id="@+id/textView01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Derrot"
+        android:text="Avatar"
         android:textColor="#C31E12"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,15 +81,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dbjugador1"
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
             android:layout_weight="1"
-            tools:itemCount="1"
-            tools:listitem="@layout/card_view_desing" />
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/nombreVerde"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Player Green"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tiempoP1Juego"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -110,7 +143,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Tiempo (min)"
+                android:text="Tiempo"
                 android:textSize="17dp" />
 
             <TextView
@@ -129,16 +162,52 @@
                 android:text="Promedio (seg)"
                 android:textSize="17dp" />
         </LinearLayout>
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dbjugador2"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
             android:layout_weight="1"
-            tools:itemCount="4"
-            tools:listitem="@layout/card_view_desing" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombreRojo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Player Red"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tiempoP2Juego"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+
+
+
+
 
 
     </LinearLayout>
@@ -178,7 +247,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SalirApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exit"
