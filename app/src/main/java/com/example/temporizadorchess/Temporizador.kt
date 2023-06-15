@@ -24,6 +24,9 @@ class Temporizador : AppCompatActivity() {
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var textViewTimer1: TextView
     private lateinit var textViewTimer2: TextView
+    private var timeRemaining: Long = 0
+     var isPaused=true
+
     //los textos del temporizador
 
 
@@ -189,6 +192,7 @@ class Temporizador : AppCompatActivity() {
                 val timeFormatted = String.format("%02d:%02d", minutes, seconds)
                 textViewTimer1.text = timeFormatted
                 textViewTimer2.text = timeFormatted
+                timeRemaining = millisUntilFinished
             }
 
             override fun onFinish() {
@@ -204,7 +208,15 @@ class Temporizador : AppCompatActivity() {
         super.onDestroy()
         countDownTimer.cancel() // Cancela el temporizador al cerrar la actividad
     }
-}
+
+    private fun pauseTimer(){
+        countDownTimer?.cancel()
+        isPaused=true
+    }
+
+     fun resumeTimer() {
+       startTimer(timeRemaining,1000)
+}}
 
 
 //fin funcion onCreate
