@@ -67,7 +67,7 @@ class Temporizador : AppCompatActivity() {
         val configuracion = findViewById<ImageView>(R.id.configuracion)
         val reiniciarTempo = findViewById<ImageView>(R.id.reiniciarTempo)
 
-
+//agregado988
         //Evento Click
 
         //Click Boton P1 tiempo y color
