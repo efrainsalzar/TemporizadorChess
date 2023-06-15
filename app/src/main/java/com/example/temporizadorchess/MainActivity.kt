@@ -16,25 +16,26 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-
+import java.time.LocalDateTime // importar la clase LocalDateTime
+import java.time.LocalDate // importar la clase LocalDate
 
 object DatosEnvi {
     var nombrePlayer1: String = ""
     var nombrePlayer2: String = ""
     var tiempoJuego: String = ""
+    var contadorP1: String = ""
+    var contadorP2: String = ""
+    var ganoPerdioP1: String = ""
+    var ganoPerdioP2: String = ""
 }
 
 class MainActivity : AppCompatActivity() {
 
 
 
-
     //valor de DBFire
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
-        //splash
-        //setTheme(R.id.AppTheme)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,8 +44,8 @@ class MainActivity : AppCompatActivity() {
         val btStar = findViewById<Button>(R.id.BotonStar)
         val namep1 = findViewById<EditText>(R.id.nameP1)
         val namep2 = findViewById<EditText>(R.id.nameP2)
-        val acercade=findViewById<Button>(R.id.acerca)
 
+        val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
         //getData()
 
@@ -55,69 +56,37 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val salida=findViewById<Button>(R.id.salida)
-
-        salida.setOnClickListener{
-            finish()
-        }
-        //boton iniciar
-
-
-        btStar.setOnClickListener{
-            val intent =Intent(this,Temporizador::class.java)
-            intent.putExtra("name_p1",namep1.text.toString())
-            intent.putExtra("name_p2",namep2.text.toString())
-            startActivity(intent)
-            //finish()
-        }
-        val ace=findViewById<Button>(R.id.acerca)
-
-        ace.setOnClickListener {
-            val intent=Intent(this,acercadenosotros::class.java)
-            startActivity(intent)
-        }
-
-
-
-        //boton iniciar
-
-        //acercade.background.alpha = 0
-
-
-
         //Metodos Click
-        acercade.setOnClickListener {
-            siguienteActivity(acercadenosotros::class.java)
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            // obtén la opción seleccionada
+            val radioButton = findViewById<RadioButton>(checkedId)
+            //val opcionSeleccionada = radioButton.id
+            ChessTimer.botonSeleccionado = radioButton.text.toString()
+
+
+            //Validar Tiempo
+            btStar.setOnClickListener{
+                if (checkedId == -1) { } else {
+                    // Se ha seleccionado un botón en el RadioGroup
+                    DatosEnvi.nombrePlayer1 = namep1.text.toString()
+                    DatosEnvi.nombrePlayer2 = namep2.text.toString()
+                    DatosEnvi.tiempoJuego = radioButton.text.toString()
+
+                    siguienteActivity(Temporizador::class.java)
+                    //finish()
+                }
+            }
+        }
+        //Boton Salir
+        botonsalir.setOnClickListener {
+            finishAffinity()
         }
 
 
-        //radioGroup.setOnCheckedChangeListener { group, checkedId ->
-        // obtén la opción seleccionada
-        //  val radioButton = findViewById<RadioButton>(checkedId)
-        //val opcionSeleccionada = radioButton.id
-        //ChessTimer.botonSeleccionado = radioButton.text.toString()
-
-
-        //}
-
-
-
-
-        //Validar Tiempo
-        btStar.setOnClickListener{
-            //   if (checkedId == -1) { } else {
-            // Se ha seleccionado un botón en el RadioGroup
-            DatosEnvi.nombrePlayer1 = namep1.text.toString()
-            DatosEnvi.nombrePlayer2 = namep2.text.toString()
-            //     DatosEnvi.tiempoJuego = radioButton.text.toString()
-
-            siguienteActivity(Temporizador::class.java)
-            //finish()
-        }
-    }
+    }//fin
     fun siguienteActivity(nameActivity: Class<out Activity>){
         val intent = Intent(this,nameActivity)
-      startActivity(intent)
+        startActivity(intent)
     }
 }
 

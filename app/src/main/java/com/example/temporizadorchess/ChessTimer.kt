@@ -26,11 +26,6 @@ class ChessTimer(private val mContext: Context) {
         ).show()
     }
 
-    fun ClickColor(colorboton1: View, colorboton2: View) {
-        colorboton1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.mycolor2))
-        colorboton2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.mycolor))
-    }
-
     fun tiempominutos(time: TextView) {
         when (botonSeleccionado) {
             "10 min" -> {                time.setText(thenTime)            }

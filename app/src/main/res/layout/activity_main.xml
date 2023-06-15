@@ -7,17 +7,7 @@
     android:layout_margin="5sp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/acerca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerca de nosotros"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+
 
     <ImageView
         android:id="@+id/botonSalir"
@@ -32,35 +22,35 @@
 
     <LinearLayout
         android:id="@+id/customPlayer"
-        android:layout_width="383dp"
-        android:layout_height="133dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintVertical_bias="0.2">
 
         <LinearLayout
-            android:layout_width="383dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="48dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.15"
                 android:background="@drawable/emoji_people_24" />
 
             <EditText
                 android:id="@+id/nameP1"
-                android:layout_width="321dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_marginLeft="10dp"
                 android:hint="Name of Player 1"
                 android:inputType="text" />
 
@@ -72,23 +62,59 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_weight="0.15"
-                android:background="@drawable/emoji_people_24" />
+                android:layout_height="match_parent"
+                android:background="@drawable/emoji_people_24"/>
 
             <EditText
                 android:id="@+id/nameP2"
                 android:layout_width="0dp"
-                android:layout_height="64dp"
-                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_marginLeft="10dp"
                 android:hint="Name of Player 2"
                 android:inputType="text" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/MinutosVerif"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <RadioButton
+            android:id="@+id/tresMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 min" />
+
+        <RadioButton
+            android:id="@+id/cincoMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5 min" />
+
+        <RadioButton
+            android:id="@+id/diezMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10 min" />
+
+        <RadioButton
+            android:id="@+id/treintaMinutos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30 min" />
+    </RadioGroup>
 
 
     <Button
@@ -102,18 +128,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.805" />
 
-
-
-
-    <Button
-        android:id="@+id/salida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salida"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

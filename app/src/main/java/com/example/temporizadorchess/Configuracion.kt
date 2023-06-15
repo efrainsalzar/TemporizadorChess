@@ -11,7 +11,12 @@ class Configuracion : AppCompatActivity() {
         setContentView(R.layout.activity_configuracion)
 
 
+        val acercade =findViewById<Button>(R.id.acercade)
 
+        acercade.setOnClickListener{
+            val intent = Intent(this, acercadenosotros::class.java)
+            startActivity(intent)
+        }
 
     }
 }
