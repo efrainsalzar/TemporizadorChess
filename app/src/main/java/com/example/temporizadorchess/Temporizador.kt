@@ -22,6 +22,9 @@ class Temporizador : AppCompatActivity() {
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var textViewTimer1: TextView
     private lateinit var textViewTimer2: TextView
+    private var timeRemaining: Long = 0
+     var isPaused=true
+
     //los textos del temporizador
 
     @SuppressLint("MissingInflatedId")
@@ -55,11 +58,13 @@ textViewTimer2=findViewById(R.id.tiempo2)
         val etiqueta2 = findViewById<TextView>(R.id.nombre2)
         etiqueta2.text = DatosEnvi.nombrePlayer2
         //etiqueta2.setText(name2)
+//variables para el boton de pausa que desactiva a los botones de los jugadores
 
         //color del boton click
         val boton1 = findViewById<View>(R.id.view1)
         val boton2 = findViewById<View>(R.id.view2)
-
+        val pause=findViewById<ImageView>(R.id.pausegame)
+        val play=findViewById<ImageView>(R.id.startgame)
         val stoped = findViewById<ImageView>(R.id.StopGame)
         //click desde otra clase
         val botonclick = ChessTimer(this,)
@@ -76,6 +81,14 @@ textViewTimer2=findViewById(R.id.tiempo2)
         stoped.setOnClickListener{
             val intent=Intent(this,Resultados::class.java)
             startActivity(intent)
+        }
+        play.setOnClickListener{
+            resumeTimer()
+        }
+        pause.setOnClickListener{
+
+                pauseTimer()
+
         }
         //color del boton click
         boton1.setOnClickListener {
@@ -118,6 +131,7 @@ textViewTimer2=findViewById(R.id.tiempo2)
                 val timeFormatted = String.format("%02d:%02d", minutes, seconds)
                 textViewTimer1.text = timeFormatted
                 textViewTimer2.text = timeFormatted
+                timeRemaining = millisUntilFinished
             }
 
             override fun onFinish() {
@@ -129,14 +143,19 @@ textViewTimer2=findViewById(R.id.tiempo2)
         countDownTimer.start()
     }
 
-
-
-
     override fun onDestroy() {
         super.onDestroy()
         countDownTimer.cancel() // Cancela el temporizador al cerrar la actividad
     }
-}
+
+    private fun pauseTimer(){
+        countDownTimer?.cancel()
+        isPaused=true
+    }
+
+     fun resumeTimer() {
+       startTimer(timeRemaining,1000)
+}}
 
 
 
