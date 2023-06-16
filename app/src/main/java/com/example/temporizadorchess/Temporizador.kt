@@ -25,7 +25,7 @@ class Temporizador : AppCompatActivity() {
     private lateinit var textViewTimer1: TextView
     private lateinit var textViewTimer2: TextView
     private var timeRemaining: Long = 0
-     var isPaused=true
+    var isPaused = true
 
     //los textos del temporizador
 
@@ -35,7 +35,7 @@ class Temporizador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         var swImageTempo = 0
-        var swImagePlay = true
+        var swPlay = true
         var condicionWin = true
         var contarP1 = 0
         var contarP2 = 0
@@ -104,12 +104,14 @@ class Temporizador : AppCompatActivity() {
         }
         //Click boton Play/Pause
         pausePlay.setOnClickListener {
-            if (swImagePlay) {
-                ClickPausePlay(pausePlay, swImagePlay)
-                swImagePlay = false
+            if (swPlay) {
+                ClickPausePlay(pausePlay, swPlay)
+                pauseTimer()
+                swPlay = false
             } else {
-                ClickPausePlay(pausePlay, swImagePlay)
-                swImagePlay = true
+                ClickPausePlay(pausePlay, swPlay)
+                resumeTimer()
+                swPlay = true
             }
         }
         //click config
@@ -120,7 +122,6 @@ class Temporizador : AppCompatActivity() {
         //click reiniciar
         reiniciarTempo.setOnClickListener {
             val intent = Intent(this, Temporizador::class.java)
-            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
 
@@ -142,7 +143,6 @@ class Temporizador : AppCompatActivity() {
                 R.color.mycolor
             )
         )
-
     }
 
 
@@ -209,14 +209,15 @@ class Temporizador : AppCompatActivity() {
         countDownTimer.cancel() // Cancela el temporizador al cerrar la actividad
     }
 
-    private fun pauseTimer(){
+    private fun pauseTimer() {
         countDownTimer?.cancel()
-        isPaused=true
+        isPaused = true
     }
 
-     fun resumeTimer() {
-       startTimer(timeRemaining,1000)
-}}
+    fun resumeTimer() {
+        startTimer(timeRemaining, 1000)
+    }
+}
 
 
 //fin funcion onCreate

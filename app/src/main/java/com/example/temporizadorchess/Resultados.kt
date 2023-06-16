@@ -37,9 +37,9 @@ class Resultados : AppCompatActivity() {
         nombres(nombrep1, nombrep2)
         //llamar tiempo
         tiempo(tiempoP1Juego, tiempoP2Juego)
-        //llamar tiempo
+        //llamar Movimientos
         contadorTurnos(cont1, cont2)
-        //llamar tiempo
+        //llamar Ganador/Perdedor
         ganarPerder(GP1, GP2)
 
 
