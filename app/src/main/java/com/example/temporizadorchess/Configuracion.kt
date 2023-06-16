@@ -17,6 +17,7 @@ class Configuracion : AppCompatActivity() {
 
 
         val acercade = findViewById<Button>(R.id.acercade)
+        val acercadeJuego = findViewById<Button>(R.id.acercadeJuego)
         val btnnewTiempo = findViewById<Button>(R.id.nuevoTiempo)
 
         val idMinuto = findViewById<EditText>(R.id.editMinutos)
@@ -24,11 +25,12 @@ class Configuracion : AppCompatActivity() {
 
 
 
+
         btnnewTiempo.isEnabled = false
 
 
         //mandar directo al textoSegundo
-        FocusTextSegundo(idMinuto,idSegundo)
+        FocusTextSegundo(/*idMinuto,*/ idSegundo)
         //validar que si se escribio datos
         ValidarDatos(btnnewTiempo, idMinuto)
 
@@ -36,6 +38,11 @@ class Configuracion : AppCompatActivity() {
         //click acercade
         acercade.setOnClickListener {
             val intent = Intent(this, acercadenosotros::class.java)
+            startActivity(intent)
+        }
+        //click acerca del juego
+        acercadeJuego.setOnClickListener{
+            val intent = Intent(this, AcercadeJuego::class.java)
             startActivity(intent)
         }
         //click reiniciar tiempo nuevo
@@ -47,14 +54,14 @@ class Configuracion : AppCompatActivity() {
 
     }
 
-    private fun FocusTextSegundo(_idMinuto: EditText,_idSegundo: EditText){
+    private fun FocusTextSegundo(/*_idMinuto: EditText, */_idSegundo: EditText) {
         //_idMinuto.setOnEditorActionListener { _, _, _ ->
-            //poner en focus
-            //_idSegundo.requestFocus()
-            //poner ceros predeterminados
-            _idSegundo.setText("00")
-            //dar bandera  de "si vete alli"
-            //true
+        //poner en focus
+        //_idSegundo.requestFocus()
+        //poner ceros predeterminados
+        _idSegundo.setText("00")
+        //dar bandera  de "si vete alli"
+        //true
         //}
     }
 

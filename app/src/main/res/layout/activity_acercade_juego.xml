@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcercadeJuego">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acerca del Juego"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.  El uso del reloj"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="¿Has visto todas esas películas en que juegan ajedrez y golpean un reloj? En algunos formatos, este sirve para medir el tiempo de cada jugador, es decir, cuánto tarda en realizar un movimiento." />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:background="#ffff">
+
+            <ImageView
+                android:id="@+id/tablaImage2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/reloj_de_ajedrez"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:id="@+id/tablaImage1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reloj_moderno"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Al ser un juego estratégico, muchos jugadores se toman su tiempo para pensar, analizar la estrategia del oponente y considerar diferentes opciones de movimiento según las reglas del ajedrez. Por ello, el reloj se torna indispensable en el caso de las competencias. ¿Te imaginas esperar 30 minutos para que el oponente tome una decisión?" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Entonces, la cuestión es que el reloj no solo está ahí para admirar a los grandes campeones de ajedrez, que parece que juegan tenis con las piezas, pues responden casi al instante cada acción del oponente. El reloj existe porque, en algunos torneos, las reglas del ajedrez establecen que cada jugador dispone de 2 minutos para realizar su movimiento." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="En competencia, las reglas del ajedrez dictan que el reloj es el inicio del tiempo de comparecencia, que debe ser cero. Además, el reloj marca la caída de bandera; es decir, el final de un turno. No puedes realizar ningún movimiento fuera de tu tiempo y si es necesaria una reubicación de piezas, se hace en el tiempo del jugador." />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reglas básicas del ajedrez"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Las reglas básicas del ajedrez, también denominadas leyes del ajedrez, están separadas en diferentes artículos dentro de los términos establecidos por la FIDE (Federación Internacional de Ajedrez)." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Hay que aclarar que, estas reglas básicas del ajedrez, no abarcan todas las situaciones posibles que pueden presentarse durante una partida (de ahí la importancia del arbitraje), pero son suficientes para establecer la secuencia básica del juego." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Entonces, ¿cuáles son las reglas de ajedrez más importantes? Las reglas básicas del ajedrez son 3:" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. El jugador con las piezas blancas mueve primero"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Decidir si jugarás con las piezas negras o blancas del ajedrez, no es una cuestión de gusto, sino que hay un componente estratégico en cada decisión. En primer lugar, deberás tener en cuenta que el jugar con las piezas blancas siempre mueve primero." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tu primer movimiento es crucial y, como consejo, debe responder a una estrategia; para ello, debes conocer muchas aperturas modernas del ajedrez, las cuales te permitirán sacar la delantera." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Cada jugador mueve 1 de sus piezas en su turno"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"
+            android:text="En este aspecto, las reglas de ajedrez son claras, no puedes mover más de una pieza en tu turno. La única excepción a esta regla es cuando realizas un enroque, que debe realizarse moviendo una de tus torres y tu rey. También se debe aclarar que, ninguna pieza puede moverse a un espacio ocupado, a menos que sea para capturar." />
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/tablaImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_tablero"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Gana el jugador que logre hacer Jaque Mate al oponente"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El objetivo del juego es muy sencillo: capturar al rey enemigo y lograr un jaque mate. Durante la partida, verás varias situaciones en las que el rey estará amenazado, sin embargo, puede librarse de la captura; a eso se le llama jaque. Sobre esta situación, hay 2 puntos que aclarar:" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3.1. Ningún jugador puede exponer a su propio rey a un jaque mate"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Ningún jugador puede mover una pieza que ponga a su propio rey en jaque mate. Si detectas que tu contrincante deja expuesto a su rey a un jaque mate, en tu siguiente turno debes prevenirlo. No importa que esta situación te beneficie (pues prácticamente ganarías llegado tu turno), puesto que las reglas del ajedrez son claras y, esa acción (exponer tu propio rey), es un movimiento prohibido." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin embargo, si quieres jugar ajedrez online, no tienes que preocuparte por esto, puesto que el juego no te permitirá mover la pieza que quieres. Esto se debe a que, como es un movimiento prohibido y la plataforma online tiene las reglas del ajedrez, bloquea el movimiento automáticamente." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3.2. El jugador que declara jaque mate debe explicar la situación"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Al anunciar jaque mate, además de permitir que tu oponente evalúe la situación, debes explicar por qué es un jaque mate (sobre todo si eres principiante o juegas contra un novato), para garantizar que tu oponente no puede realizar ninguna acción que salve al rey según las reglas del ajedrez." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Recuerda que, al hacer jaque mate, no estás capturando al rey enemigo (no mueves ninguna de tus piezas al espacio del rey oponente), sino que bloqueas el movimiento del rey contrario; es decir, lo arrinconas, por lo que es el jugador oponente quien debe rendir al rey (acostando la pieza)." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Por ello, en cuanto declares jaque mate, si tu oponente no se ha percatado de esta situación, lo más probable es que quiera entender los motivos de tu jaque mate. Además, esto te servirá para demostrar que conoces las reglas básicas del ajedrez. Con esto, ya tenemos cubierto lo que serían las reglas del ajedrez para principiantes, vamos a lo que sigue." />
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/winImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_win"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
