@@ -55,18 +55,21 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+        btStar.isEnabled=false
         //Metodos Click
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             // obtén la opción seleccionada
             val radioButton = findViewById<RadioButton>(checkedId)
+            btStar.isEnabled=true
             //val opcionSeleccionada = radioButton.id
-            ChessTimer.botonSeleccionado = radioButton.text.toString()
+
 
 
             //Validar Tiempo
             btStar.setOnClickListener{
-                if (checkedId == -1) { } else {
+                if (checkedId == -1) {  } else {
+
+
                     // Se ha seleccionado un botón en el RadioGroup
                     DatosEnvi.nombrePlayer1 = namep1.text.toString()
                     DatosEnvi.nombrePlayer2 = namep2.text.toString()

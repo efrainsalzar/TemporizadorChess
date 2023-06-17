@@ -32,10 +32,7 @@ class Configuracion : AppCompatActivity() {
         btnnewTiempo.isEnabled = false
 
 
-        //mandar directo al textoSegundo
-        FocusTextSegundo(/*idMinuto,*/ idSegundo)
-        //validar que si se escribio datos
-        ValidarDatos(btnnewTiempo, idMinuto)
+
 
 
         //click acercade
@@ -54,20 +51,28 @@ class Configuracion : AppCompatActivity() {
 
         retorno.setOnClickListener { finish() }
 
+
+        //mandar directo al textoSegundo
+        FocusTextSegundo(idMinuto, idSegundo)
+        //validar que si se escribio datos
+        ValidarMinutos(btnnewTiempo, idMinuto)
+        //validad segundos
+        ValidarSegundos(idSegundo)
+
     }
 
-    private fun FocusTextSegundo(/*_idMinuto: EditText, */_idSegundo: EditText) {
-        //_idMinuto.setOnEditorActionListener { _, _, _ ->
+    private fun FocusTextSegundo(_idMinuto: EditText, _idSegundo: EditText) {
+        _idMinuto.setOnEditorActionListener { _, _, _ ->
         //poner en focus
-        //_idSegundo.requestFocus()
+        _idSegundo.requestFocus()
         //poner ceros predeterminados
         _idSegundo.setText("00")
         //dar bandera  de "si vete alli"
-        //true
-        //}
+        true
+        }
     }
 
-    private fun ValidarDatos(_btnnewTime: Button, _idMinuto: EditText) {
+    private fun ValidarMinutos(_btnnewTime: Button, _idMinuto: EditText) {
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -89,5 +94,24 @@ class Configuracion : AppCompatActivity() {
         _idMinuto.addTextChangedListener(textWatcher)
     }
 
+    private fun ValidarSegundos(_idSegundo:EditText){
+        _idSegundo.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val valueStr = s.toString()
+                if (!valueStr.isNullOrEmpty()) {
+                    val value = valueStr.toInt()
+                    if (value > 59) {
+                        _idSegundo.setText("59")
+                    }
+                }
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+    }
+
+    private fun newSelection(){
+
+    }
 
 }

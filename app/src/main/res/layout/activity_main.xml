@@ -82,8 +82,10 @@
 
     <RadioGroup
         android:id="@+id/MinutosVerif"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
@@ -95,25 +97,26 @@
             android:id="@+id/tresMinutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3 min" />
+            android:text="    3 min"
+            android:elevation="20dp"/>
 
         <RadioButton
             android:id="@+id/cincoMinutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="5 min" />
+            android:text="    5 min" />
 
         <RadioButton
             android:id="@+id/diezMinutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="10 min" />
+            android:text="    10 min" />
 
         <RadioButton
             android:id="@+id/treintaMinutos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="30 min" />
+            android:text="    30 min" />
     </RadioGroup>
 
 
@@ -126,7 +129,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805" />
+        app:layout_constraintVertical_bias="0.9" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
