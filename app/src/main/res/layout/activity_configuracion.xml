@@ -6,55 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".Configuracion">
 
-    <Button
-        android:id="@+id/acercade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerca de nosotros"
-        android:textSize="11dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ImageView
+        android:id="@+id/atras"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/return_24"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintHorizontal_bias="0"/>
 
     <Button
         android:id="@+id/acercadeJuego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Acerca del juego"
-        android:textSize="13dp"
+        android:text="Acerca de"
+        android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.022"/>
 
-    <ImageView
-        android:id="@+id/botonSalir"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/return_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
         android:id="@+id/nuevoTiempo"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Reiniciar tiempo"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.97" />
 
     <TextView
         android:id="@+id/textView7"
@@ -66,7 +56,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acercade" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/textView8"
@@ -75,37 +66,38 @@
         android:text="Minuto"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintVertical_bias="1"
+        />
 
 
     <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Segundo"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="1" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
 
 
         <EditText
@@ -117,7 +109,7 @@
             android:hint="--"
             android:inputType="number"
             android:maxLength="2"
-            android:textSize="55dp" />
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -126,7 +118,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text=":"
-            android:textSize="65dp" />
+            android:textSize="45dp" />
 
         <EditText
             android:id="@+id/editSegundos"
@@ -137,9 +129,10 @@
             android:hint="--"
             android:inputType="number"
             android:maxLength="2"
-            android:textSize="55dp" />
+            android:textSize="30dp" />
 
     </LinearLayout>
+
 
 
 

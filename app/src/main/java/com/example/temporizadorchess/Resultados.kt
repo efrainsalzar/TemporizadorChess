@@ -21,6 +21,8 @@ class Resultados : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultados)
 
+
+
         //Datos P1
         val nombrep1 = findViewById<TextView>(R.id.nombrePlayer1)
         val tiempoP1Juego = findViewById<TextView>(R.id.tiempoP1Juego)
@@ -49,6 +51,8 @@ class Resultados : AppCompatActivity() {
         val btnCloudAdd = findViewById<ImageView>(R.id.cloudAdd)
 
         //eventoClick
+
+
         btnSalirApp.setOnClickListener {
             finishAffinity()
         }

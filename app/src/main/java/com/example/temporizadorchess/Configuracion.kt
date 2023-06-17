@@ -8,6 +8,7 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.NumberPicker
 
 class Configuracion : AppCompatActivity() {
@@ -16,12 +17,14 @@ class Configuracion : AppCompatActivity() {
         setContentView(R.layout.activity_configuracion)
 
 
-        val acercade = findViewById<Button>(R.id.acercade)
+
         val acercadeJuego = findViewById<Button>(R.id.acercadeJuego)
         val btnnewTiempo = findViewById<Button>(R.id.nuevoTiempo)
 
         val idMinuto = findViewById<EditText>(R.id.editMinutos)
         val idSegundo = findViewById<EditText>(R.id.editSegundos)
+
+        val retorno = findViewById<ImageView>(R.id.atras)
 
 
 
@@ -36,10 +39,7 @@ class Configuracion : AppCompatActivity() {
 
 
         //click acercade
-        acercade.setOnClickListener {
-            val intent = Intent(this, acercadenosotros::class.java)
-            startActivity(intent)
-        }
+
         //click acerca del juego
         acercadeJuego.setOnClickListener{
             val intent = Intent(this, AcercadeJuego::class.java)
@@ -51,6 +51,8 @@ class Configuracion : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        retorno.setOnClickListener { finish() }
 
     }
 

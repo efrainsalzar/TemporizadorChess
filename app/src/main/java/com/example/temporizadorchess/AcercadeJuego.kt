@@ -13,6 +13,7 @@ class AcercadeJuego : AppCompatActivity() {
 
 
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.image_tablero)
+        val retorno=findViewById<ImageView>(R.id.atras)
 
         // Escala la imagen (en este caso, al 50% del tamaño original)
         val ancho = bitmap.width / 2
@@ -24,6 +25,10 @@ class AcercadeJuego : AppCompatActivity() {
         imageTablero.setImageBitmap(nuevaImagen)
 
 
+
+        retorno.setOnClickListener{
+            finish()
+        }
 
 
 
