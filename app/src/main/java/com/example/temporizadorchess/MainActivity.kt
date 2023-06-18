@@ -27,13 +27,12 @@ object DatosEnvi {
     var contadorP2: String = ""
     var ganoPerdioP1: String = ""
     var ganoPerdioP2: String = ""
+
 }
 
 class MainActivity : AppCompatActivity() {
 
 
-
-    //valor de DBFire
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -47,13 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
-        //getData()
-
-        //funcion desde ota clase
-        /*val otra = ChessTimer(this)
-        otra.mostrarToast()*/
-
-
 
         btStar.isEnabled=false
         //Metodos Click
@@ -61,25 +53,27 @@ class MainActivity : AppCompatActivity() {
             // obtén la opción seleccionada
             val radioButton = findViewById<RadioButton>(checkedId)
             btStar.isEnabled=true
-            //val opcionSeleccionada = radioButton.id
-
-
-
-            //Validar Tiempo
-            btStar.setOnClickListener{
-                if (checkedId == -1) {  } else {
-
-
-                    // Se ha seleccionado un botón en el RadioGroup
-                    DatosEnvi.nombrePlayer1 = namep1.text.toString()
-                    DatosEnvi.nombrePlayer2 = namep2.text.toString()
-                    DatosEnvi.tiempoJuego = radioButton.text.toString()
-
-                    siguienteActivity(Temporizador::class.java)
-                    //finish()
-                }
+            //val opcionSeleccionada = radioButton.text.toString()
+             val number= radioGroup.checkedRadioButtonId?.let {
+                findViewById<RadioButton>(it).text.toString().replace("\\D+".toRegex(), "")
             }
+            DatosEnvi.tiempoJuego = number.toString()
+
         }
+        btStar.setOnClickListener{
+            // Se ha seleccionado un botón en el RadioGroup
+            DatosEnvi.nombrePlayer1 = namep1.text.toString()
+            DatosEnvi.nombrePlayer2 = namep2.text.toString()
+            //val n = number?.toInt()
+            Toast.makeText(this, "tiempo de Juego ${DatosEnvi.tiempoJuego}", Toast.LENGTH_SHORT).show()
+
+            siguienteActivity(Temporizador::class.java)
+            //finish()
+        }
+
+
+
+
         //Boton Salir
         botonsalir.setOnClickListener {
             finishAffinity()

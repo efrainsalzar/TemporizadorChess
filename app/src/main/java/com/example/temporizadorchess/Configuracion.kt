@@ -10,8 +10,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.NumberPicker
+import android.widget.RadioButton
+import android.widget.RadioGroup
 
 class Configuracion : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuracion)
@@ -26,16 +31,26 @@ class Configuracion : AppCompatActivity() {
 
         val retorno = findViewById<ImageView>(R.id.atras)
 
-
+        val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
 
         btnnewTiempo.isEnabled = false
 
 
 
+        //Validar Seleccion
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            // obtén la opción seleccionada
+            //val radioButton = findViewById<RadioButton>(checkedId)
 
-
-        //click acercade
+            idMinuto.text.clear(); idSegundo.text.clear();
+            newSelectionText(btnnewTiempo, true)
+            //val opcionSeleccionada = radioButton.text.toString()
+            val number= radioGroup.checkedRadioButtonId?.let {
+                findViewById<RadioButton>(it).text.toString().replace("\\D+".toRegex(), "")
+            }
+            DatosEnvi.tiempoJuego = number.toString()
+        }
 
         //click acerca del juego
         acercadeJuego.setOnClickListener{
@@ -44,52 +59,53 @@ class Configuracion : AppCompatActivity() {
         }
         //click reiniciar tiempo nuevo
         btnnewTiempo.setOnClickListener {
+            if(!idMinuto.text.isNullOrEmpty()){DatosEnvi.tiempoJuego = idMinuto.text.toString()}
+
             val intent = Intent(this, Temporizador::class.java)
             startActivity(intent)
             finish()
         }
+        //Click minutos
 
         retorno.setOnClickListener { finish() }
 
 
         //mandar directo al textoSegundo
+
         FocusTextSegundo(idMinuto, idSegundo)
         //validar que si se escribio datos
         ValidarMinutos(btnnewTiempo, idMinuto)
         //validad segundos
         ValidarSegundos(idSegundo)
 
-    }
+    }//-------------------------------------------------------------------------------
 
     private fun FocusTextSegundo(_idMinuto: EditText, _idSegundo: EditText) {
-        _idMinuto.setOnEditorActionListener { _, _, _ ->
+        //_idMinuto.setOnEditorActionListener { _, _, _ ->
         //poner en focus
-        _idSegundo.requestFocus()
+        /*_idSegundo.requestFocus()*/
         //poner ceros predeterminados
         _idSegundo.setText("00")
+            //newSelectionText(_radioGroup, false)
+
+
         //dar bandera  de "si vete alli"
-        true
-        }
+        //true
+        //}
     }
 
-    private fun ValidarMinutos(_btnnewTime: Button, _idMinuto: EditText) {
+    private fun ValidarMinutos(_btnnewTiempo: Button, _idMinuto: EditText) {
         val textWatcher = object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-            }
-
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty() || s.toString().toInt() < 3 || s.toString().toInt() > 90) {
-                    _btnnewTime.isEnabled = false
+                    newSelectionText(_btnnewTiempo, false)
                 } else {
-                    _btnnewTime.isEnabled = true
+                    newSelectionText(_btnnewTiempo, true)
+
                 }
             }
-
         }
         _idMinuto.addTextChangedListener(textWatcher)
     }
@@ -101,7 +117,7 @@ class Configuracion : AppCompatActivity() {
                 val valueStr = s.toString()
                 if (!valueStr.isNullOrEmpty()) {
                     val value = valueStr.toInt()
-                    if (value > 59) {
+                    if (value > 59  ) {
                         _idSegundo.setText("59")
                     }
                 }
@@ -110,8 +126,18 @@ class Configuracion : AppCompatActivity() {
         })
     }
 
-    private fun newSelection(){
+    private fun newSelectionBoton(_radioValidar:RadioButton, bool : Boolean){
+        if(bool)
+        {_radioValidar.isChecked = true }
+        else
+        {_radioValidar.isChecked = false }
+    }
 
+    private fun newSelectionText (_btnnewTiempo: Button, bool: Boolean){
+        if(bool)
+        {_btnnewTiempo.isEnabled = true}
+        else
+        {_btnnewTiempo.isEnabled = false}
     }
 
 }

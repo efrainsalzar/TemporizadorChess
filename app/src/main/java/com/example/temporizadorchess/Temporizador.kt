@@ -1,6 +1,5 @@
 package com.example.temporizadorchess
 
-import android.animation.Animator.AnimatorPauseListener
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -8,27 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import android.os.CountDownTimer
-import android.os.Handler
 
 import android.view.View
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import java.util.Locale
-
 
 class Temporizador : AppCompatActivity() {
-
-    //Variables para el temporizador
-    private lateinit var countDownTimer: CountDownTimer
-    private lateinit var textViewTimer1: TextView
-    private lateinit var textViewTimer2: TextView
-    private var timeRemaining: Long = 0
-    var isPaused = true
-
-    //los textos del temporizador
-
 
     @SuppressLint("MissingInflatedId")
 
@@ -40,29 +25,15 @@ class Temporizador : AppCompatActivity() {
         var contarP1 = 0
         var contarP2 = 0
 
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
 
-//variables del temporizador
-        textViewTimer1 = findViewById(R.id.tiempo1)
-        textViewTimer2 = findViewById(R.id.tiempo2)
-        startTimer(601000, 1000)
-
-        //nombres extraidos
-        //val name1 = intent.getStringExtra("name_p1")
-        //val name2 = intent.getStringExtra("name_p2")
-        var sw = 0
-
-        //Inicia la activity
-
         //llamar nombres
         AddNombre()
-
         //llamar tiempo
         Addtiempo()
 
-
-//val de otra clase
         val boton1 = findViewById<View>(R.id.view1)
         val boton2 = findViewById<View>(R.id.view2)
         val stoped = findViewById<ImageView>(R.id.StopGame)
@@ -72,10 +43,10 @@ class Temporizador : AppCompatActivity() {
 
 
         //Evento Click
-
         //Click Boton P1 tiempo y color
         boton1.setOnClickListener {
             //cambia el color del boton
+
             if (swImageTempo == 1 || swImageTempo == 0) {
                 contarP1++
                 condicionWin = true
@@ -106,11 +77,9 @@ class Temporizador : AppCompatActivity() {
         pausePlay.setOnClickListener {
             if (swPlay) {
                 ClickPausePlay(pausePlay, swPlay)
-                pauseTimer()
                 swPlay = false
             } else {
                 ClickPausePlay(pausePlay, swPlay)
-                resumeTimer()
                 swPlay = true
             }
         }
@@ -130,22 +99,11 @@ class Temporizador : AppCompatActivity() {
 
     } //fin del oncreate
 
+
     private fun ClickbotonTempo(_boton1: View, _boton2: View) {
-        _boton1.backgroundTintList = ColorStateList.valueOf(
-            ContextCompat.getColor(
-                this,
-                R.color.mycolor2
-            )
-        )
-        _boton2.backgroundTintList = ColorStateList.valueOf(
-            ContextCompat.getColor(
-                this,
-                R.color.mycolor
-            )
-        )
+        _boton1.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor2))
+        _boton2.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.mycolor))
     }
-
-
     private fun AddNombre() {
         //nombre
         val etiqueta1 = findViewById<TextView>(R.id.nombre1)
@@ -153,23 +111,19 @@ class Temporizador : AppCompatActivity() {
         etiqueta1.text = DatosEnvi.nombrePlayer1
         etiqueta2.text = DatosEnvi.nombrePlayer2
     }
-
     private fun Addtiempo() {
-        val tiempomin = ChessTimer(this)
         val etiquetaTiempo1 = findViewById<TextView>(R.id.tiempo1)
         val etiquetaTiempo2 = findViewById<TextView>(R.id.tiempo2)
 
-        tiempomin.tiempominutos(etiquetaTiempo1)
-        tiempomin.tiempominutos(etiquetaTiempo2)
+        etiquetaTiempo1.setText(DatosEnvi.tiempoJuego)
+        etiquetaTiempo2.setText(DatosEnvi.tiempoJuego)
+
     }
-
     private fun ClickPausePlay(_playPause: ImageView, _sw: Boolean) {
-        if (_sw) {
-            _playPause.setImageResource(R.drawable.pause_icon)
-        } else {
-            _playPause.setImageResource(R.drawable.play_icon)
-        }
-
+        if (_sw)
+        { _playPause.setImageResource(R.drawable.pause_icon) }
+        else
+        { _playPause.setImageResource(R.drawable.play_icon) }
     }
 
     fun tuTurno(condicion: Boolean) {
@@ -183,44 +137,5 @@ class Temporizador : AppCompatActivity() {
     }
 
 
-    private fun startTimer(durationMillis: Long, intervalMillis: Long) {
-        countDownTimer = object : CountDownTimer(durationMillis, intervalMillis) {
-            override fun onTick(millisUntilFinished: Long) {
-                val secondsRemaining = millisUntilFinished / 1000
-                val minutes = secondsRemaining / 60
-                val seconds = secondsRemaining % 60
-                val timeFormatted = String.format("%02d:%02d", minutes, seconds)
-                textViewTimer1.text = timeFormatted
-                textViewTimer2.text = timeFormatted
-                timeRemaining = millisUntilFinished
-            }
-
-            override fun onFinish() {
-                textViewTimer1.text = "00:00"
-                textViewTimer2.text = "00:00"
-            }
-        }
-
-        countDownTimer.start()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        countDownTimer.cancel() // Cancela el temporizador al cerrar la actividad
-    }
-
-    private fun pauseTimer() {
-        countDownTimer?.cancel()
-        isPaused = true
-    }
-
-    fun resumeTimer() {
-        startTimer(timeRemaining, 1000)
-    }
-}
-
-
-//fin funcion onCreate
-
-//fin ClassMain
+}//fin ClassMain
 

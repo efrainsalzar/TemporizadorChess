@@ -21,9 +21,7 @@
         <activity
             android:name=".Resultados"
             android:exported="false" />
-        <activity
-            android:name=".acercadenosotros"
-            android:exported="false" />
+
         <activity
             android:name=".InformeResult"
             android:exported="false" />
