@@ -69,8 +69,8 @@ class Temporizador : AppCompatActivity() {
         val pausePlay = findViewById<ImageView>(R.id.pausePlay)
         val configuracion = findViewById<ImageView>(R.id.configuracion)
         val reiniciarTempo = findViewById<ImageView>(R.id.reiniciarTempo)
-
-
+        val cuenta1=findViewById<TextView>(R.id.set1)
+        val cuenta2=findViewById<TextView>(R.id.set2)
         //Evento Click
 
         //Click Boton P1 tiempo y color
@@ -80,6 +80,7 @@ class Temporizador : AppCompatActivity() {
                 contarP1++
                 condicionWin = true
                 ClickbotonTempo(boton1, boton2)
+                cuenta1.setText("Turnos: "+contarP1)
                 swImageTempo = 2
             }
         }
@@ -90,6 +91,7 @@ class Temporizador : AppCompatActivity() {
                 contarP2++
                 condicionWin = false
                 ClickbotonTempo(boton2, boton1)
+                cuenta2.setText("Turnos: "+contarP2)
                 swImageTempo = 1
             }
         }
@@ -223,4 +225,3 @@ class Temporizador : AppCompatActivity() {
 //fin funcion onCreate
 
 //fin ClassMain
-
