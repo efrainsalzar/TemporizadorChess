@@ -8,20 +8,6 @@
     tools:context=".Temporizador">
 
 
-    <TextView
-        android:id="@+id/set1"
-        android:layout_width="113dp"
-        android:layout_height="33dp"
-        android:text="Turnos: 0"
-        android:textSize="20dp"
-        android:rotation="180"
-        android:gravity="center"
-        android:textColor="#80FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view1"
-        app:layout_constraintVertical_bias="0.372" />
 
     <View
         android:id="@+id/view1"
@@ -156,20 +142,7 @@
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintVertical_bias="0.507" />
 
-    <TextView
-        android:id="@+id/set2"
-        android:layout_width="109dp"
-        android:layout_height="25dp"
-        android:text="Turnos: 0"
-        android:textSize="20dp"
-        android:textColor="#80FFFFFF"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view1"
-        app:layout_constraintVertical_bias="0.62" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

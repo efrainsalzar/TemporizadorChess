@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDateTime // importar la clase LocalDateTime
 import java.time.LocalDate // importar la clase LocalDate
+import java.util.Random
 
 object DatosEnvi {
     var nombrePlayer1: String = ""
@@ -33,8 +35,17 @@ object DatosEnvi {
 class MainActivity : AppCompatActivity() {
 
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        val stringList = listOf("Chispitas", "Estrellita", "Diablito", "Cabezón", "Pato Donald", "Tomate", "Chamaco", "Dulcecita", "Pastelito") // Store strings in a list
+
+        val random = Random()
+
+
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -46,6 +57,8 @@ class MainActivity : AppCompatActivity() {
 
         val radioGroup = findViewById<RadioGroup>(R.id.MinutosVerif)
 
+        namep1.setHint(stringList[random.nextInt(stringList.size)]) // Get random text from list  and set it in EditText
+        namep2.setHint(stringList[random.nextInt(stringList.size)]) // Get random text from list  and set it in EditText
 
         btStar.isEnabled=false
         //Metodos Click
@@ -62,8 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
         btStar.setOnClickListener{
             // Se ha seleccionado un botón en el RadioGroup
-            DatosEnvi.nombrePlayer1 = namep1.text.toString()
-            DatosEnvi.nombrePlayer2 = namep2.text.toString()
+            guardar_nombres(namep1,namep2)
             //val n = number?.toInt()
             Toast.makeText(this, "tiempo de Juego ${DatosEnvi.tiempoJuego}", Toast.LENGTH_SHORT).show()
 
@@ -84,6 +96,17 @@ class MainActivity : AppCompatActivity() {
     fun siguienteActivity(nameActivity: Class<out Activity>){
         val intent = Intent(this,nameActivity)
         startActivity(intent)
+    }
+
+    private fun guardar_nombres(namep1:TextView,namep2:TextView){
+        if(!namep1.text.isNullOrEmpty()){
+            DatosEnvi.nombrePlayer1 = namep1.text.toString()
+            DatosEnvi.nombrePlayer2 = namep2.text.toString()
+        }
+        else {
+            DatosEnvi.nombrePlayer1 = namep1.hint.toString()
+            DatosEnvi.nombrePlayer2 = namep2.hint.toString()
+        }
     }
 }
 
