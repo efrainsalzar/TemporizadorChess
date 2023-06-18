@@ -1,6 +1,7 @@
 package com.example.temporizadorchess
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 
 class Temporizador : AppCompatActivity() {
@@ -25,14 +27,16 @@ class Temporizador : AppCompatActivity() {
     private var PausarPrimeraP1: Boolean = true
     private var PausarPrimeraP2: Boolean = true
 
+    var condicionWin = true
+    var contarP1 = 0
+    var contarP2 = 0
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         var swImageTempo = 0
         var swPlay = true
-        var condicionWin = true
-        var contarP1 = 0
-        var contarP2 = 0
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
@@ -82,11 +86,7 @@ class Temporizador : AppCompatActivity() {
         }
         // click Stop
         stoped.setOnClickListener {
-            DatosEnvi.contadorP1 = contarP1.toString()
-            DatosEnvi.contadorP2 = contarP2.toString()
-            tuTurno(condicionWin)
-            val intent = Intent(this, Resultados::class.java)
-            startActivity(intent)
+            siguienteActivity(Resultados::class.java)
             finish()
         }
         // Click pausePlay
@@ -207,18 +207,24 @@ class Temporizador : AppCompatActivity() {
         }
     }
 
-    private fun stopTimerP1() {
+    private  fun stopTimerP1() {
         countdownTimerP1.cancel()
         isTimerRunningP1 = false
         timeRemainingP1 = 0
         updateTimerText1(etiquetaTiempo1)
+        //
+        siguienteActivity(Resultados::class.java)
+        finish()
     }
 
-    private fun stopTimerP2() {
+    private  fun stopTimerP2() {
         countdownTimerP2.cancel()
         isTimerRunningP2 = false
         timeRemainingP2 = 0
         updateTimerText2(etiquetaTiempo2)
+        //
+        siguienteActivity(Resultados::class.java)
+        finish()
     }
 
     private fun ClickbotonTempo(boton1: View, boton2: View) {
@@ -251,5 +257,12 @@ class Temporizador : AppCompatActivity() {
             DatosEnvi.ganoPerdioP2 = "Victoria"
             DatosEnvi.ganoPerdioP1 = "Derrota"
         }
+    }
+    private fun siguienteActivity(nameActivity: Class<out Activity>){
+        DatosEnvi.contadorP1 = contarP1.toString()
+        DatosEnvi.contadorP2 = contarP2.toString()
+        tuTurno(condicionWin)
+        val intent = Intent(this,nameActivity)
+        startActivity(intent)
     }
 }

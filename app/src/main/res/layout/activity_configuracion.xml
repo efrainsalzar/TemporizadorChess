@@ -8,6 +8,16 @@
 
 
     <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/configuracion" />
+
+    <ImageView
         android:id="@+id/atras"
         android:layout_width="50dp"
         android:layout_height="40dp"
@@ -22,14 +32,14 @@
     <Button
         android:id="@+id/acercadeJuego"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
         android:text="Acerca de"
         android:textSize="11sp"
-        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"/>
+        app:layout_constraintVertical_bias="0.022" />
 
 
 
@@ -90,8 +100,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +113,7 @@
 
         <EditText
             android:id="@+id/editMinutos"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center"
@@ -123,7 +133,7 @@
 
         <EditText
             android:id="@+id/editSegundos"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center"
@@ -147,13 +157,14 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="265dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#19000000"
-        android:orientation="vertical"
 
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,49 +188,58 @@
                 android:id="@+id/unMinuto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    1 min" />
-
 
 
             <RadioButton
                 android:id="@+id/tresMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="    3 min"
-                android:elevation="20dp"/>
+                android:elevation="20dp"
+                android:textColor="#FFFF"
+                android:text="    3 min" />
 
             <RadioButton
                 android:id="@+id/cincoMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    5 min" />
 
             <RadioButton
                 android:id="@+id/diezMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    10 min" />
 
             <RadioButton
                 android:id="@+id/quinceMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    15 min" />
+
             <RadioButton
                 android:id="@+id/veinteMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    20 min" />
 
             <RadioButton
                 android:id="@+id/treintaMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    30 min" />
+
             <RadioButton
                 android:id="@+id/cuarentaMinutos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFF"
                 android:text="    40 min" />
 
         </RadioGroup>
