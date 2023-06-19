@@ -8,25 +8,15 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/principal" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="370dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116"
+
         app:srcCompat="@drawable/logo" />
 
     <ImageView
@@ -54,7 +44,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41">
+        app:layout_constraintVertical_bias="0.4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +55,9 @@
                 android:layout_width="85dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.15"
-                android:background="@drawable/peon"
+                android:src="@drawable/peon"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
                 android:rotationY="-180" />
 
             <EditText
@@ -73,7 +65,7 @@
                 android:layout_width="143dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="30dp"
+
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint="Name of Player 1"
@@ -89,7 +81,7 @@
                 android:id="@+id/nameP2"
                 android:layout_width="153dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
                 android:gravity="center"
