@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -37,6 +38,8 @@ class Temporizador : AppCompatActivity() {
         var swImageTempo = 0
         var swPlay = true
 
+        val mediaPlayer = MediaPlayer.create(this, R.raw.sonido)
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temporizador)
@@ -62,7 +65,9 @@ class Temporizador : AppCompatActivity() {
 
         // Evento Click P1
         boton1.setOnClickListener {
+
             if (swImageTempo == 1 || swImageTempo == 0) {
+                mediaPlayer.start()
                 contarP1++
                 condicionWin = true
                 ClickbotonTempo(boton1, boton2)
@@ -75,6 +80,7 @@ class Temporizador : AppCompatActivity() {
         // Evento Click P2
         boton2.setOnClickListener {
             if (swImageTempo == 2 || swImageTempo == 0) {
+                mediaPlayer.start()
                 contarP2++
                 condicionWin = false
                 ClickbotonTempo(boton2, boton1)
